@@ -4,7 +4,7 @@
 #include "Point.hpp"
 #include <string>
 
-enum class COULEURS
+enum COULEURS
 {
     NOIR,
     BLANC,
