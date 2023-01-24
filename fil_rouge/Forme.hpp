@@ -29,8 +29,8 @@ public:
     Forme(Point p = Point(), int = 0, int = 0);
     inline int getNbForme() { return nbForme; }
     inline Point getPoint() { return p; }
-    inline COULEURS getColor() { return color; }
-    inline void setColor(COULEURS color) { this->color = color; }
+    inline COULEURS getCouleur() { return color; }
+    inline void setCouleur(COULEURS color) { this->color = color; }
 };
 
 #endif
