@@ -11,17 +11,14 @@ class Point
 public:
   Point();
   Point(int, int);
-
-  int getX();
-  int getY();
+  static Point const ORIGINE;
+  inline int getX() const { return x; };
+  inline int getY() const { return y; };
   static int getCompteur();
   void setX(int);
   void setY(int);
   void deplacerDe(int, int);
   void deplacerVers(int, int);
-
 };
-
-
 
 #endif

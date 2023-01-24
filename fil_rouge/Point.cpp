@@ -17,17 +17,8 @@ Point::Point(int x, int y){
 
 int Point::compteur = 0;
 
-int Point::getX()
-{
-    return x;
-}
-int Point::getY()
-{
-    return y;
-}
-int Point::getCompteur(){
-    return compteur;
-}
+Point const Point::ORIGINE = Point(0,0);
+
 void Point::setX(int x)
 {
     this->x = x;
