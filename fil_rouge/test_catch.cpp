@@ -82,6 +82,29 @@ TEST_CASE("Compteur", "[Forme]")
     REQUIRE(1 == p->getId());
     delete p;
     REQUIRE(2 == Forme::prochainId());
+}
+
+TEST_CASE("Cercle", "[Cercle]") {
+   int compteur = Forme::prochainId();
+   Cercle c1;
+   Cercle c2(Point(1, 2), 3, 4); 
+   
+   REQUIRE(c1.toString() == "CERCLE 0 0 0 0");
+   REQUIRE(c2.toString() == "CERCLE 1 2 3 4");
+
+   REQUIRE(c2.getW() == 3);
+   REQUIRE(c2.getH() == 4);  
+
+   REQUIRE(Forme::prochainId() == (compteur+2) ); 
 }*/
 
+TEST_CASE("Polymorphisme", "[Forme]") {
+   Forme * f1 = new Cercle;
+   Forme * f2 = new Rectangle;
 
+   REQUIRE(f1->toString() == "CERCLE 0 0 0 0");
+   REQUIRE(f2->toString() == "RECTANGLE 0 0 0 0");
+
+   delete f1;
+   delete f2;
+}

@@ -30,6 +30,7 @@ private:
 public:
     Forme(Point p = Point(), int = 0, int = 0, COULEURS c = COULEURS::BLEU);
     Forme(Point p, COULEURS c);
+    virtual ~Forme() = default;
     inline Point &getPoint() { return p; }
     inline COULEURS getCouleur() { return color; }
     inline void setCouleur(COULEURS color) { this->color = color; }
@@ -37,6 +38,7 @@ public:
     inline void setY(int y1) { p.setY(y1); };
     inline static int prochainId() { return nbForme; };
     inline int getId() { return id; };
+    virtual std::string toString() const = 0;
 };
 
 #endif

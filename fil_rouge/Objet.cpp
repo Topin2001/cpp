@@ -7,7 +7,7 @@ Rectangle::Rectangle(Point p, int w, int h) : Forme::Forme(p, w, h)
     this->ordre = 0;
 }
 
-std::string Rectangle::toString()
+std::string Rectangle::toString() const
 {
     std::string str = "RECTANGLE " + std::to_string(p.getX()) + " " + std::to_string(p.getY()) + " " + std::to_string(w) + " " + std::to_string(h);
 
@@ -24,7 +24,7 @@ Cercle::Cercle(Point p, int r) : Forme::Forme(Point(p.getX() + r, p.getY() + r),
     this->ordre = 0;
 }
 
-std::string Cercle::toString()
+std::string Cercle::toString() const
 {
     std::string str = "CERCLE " + std::to_string(p.getX()) + " " + std::to_string(p.getY()) + " " + std::to_string(w) + " " + std::to_string(h);
 
