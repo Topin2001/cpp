@@ -15,8 +15,8 @@ public:
   inline int getX() const { return x; };
   inline int getY() const { return y; };
   static int getCompteur();
-  void setX(int);
-  void setY(int);
+  inline void setX(int x1) { x = x1; };
+  inline void setY(int y1) { y = y1; };
   void deplacerDe(int, int);
   void deplacerVers(int, int);
 };

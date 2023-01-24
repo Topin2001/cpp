@@ -19,14 +19,6 @@ int Point::compteur = 0;
 
 Point const Point::ORIGINE = Point(0,0);
 
-void Point::setX(int x)
-{
-    this->x = x;
-}
-void Point::setY(int y)
-{
-    this->y = y;
-}
 void Point::deplacerDe(int x, int y)
 {
     this->x += x;
