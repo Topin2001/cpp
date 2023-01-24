@@ -16,24 +16,27 @@ enum COULEURS
 
 class Forme
 {
-private:
-    int nbForme = 0;
-    COULEURS color;
 
 protected:
     Point p;
     int w;
     int h;
 
+private:
+    static int nbForme;
+    int id;
+    COULEURS color;
+
 public:
     Forme(Point p = Point(), int = 0, int = 0, COULEURS c = COULEURS::BLEU);
     Forme(Point p, COULEURS c);
-    inline int getNbForme() { return nbForme; }
-    inline Point& getPoint() { return p; }
+    inline Point &getPoint() { return p; }
     inline COULEURS getCouleur() { return color; }
     inline void setCouleur(COULEURS color) { this->color = color; }
     inline void setX(int x1) { p.setX(x1); };
     inline void setY(int y1) { p.setY(y1); };
+    inline static int prochainId() { return nbForme; };
+    inline int getId() { return id; };
 };
 
 #endif

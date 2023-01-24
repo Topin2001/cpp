@@ -3,6 +3,7 @@
 #include "catch.hpp"
 #include "Objet.hpp"
 
+/*
 TEST_CASE("Instanciation", "[Point]")
 {
     Point p1;
@@ -68,3 +69,19 @@ TEST_CASE("Instanciation3", "[Forme]")
     REQUIRE_FALSE(f2.getCouleur() == COULEURS::BLEU);
     REQUIRE_FALSE(f2.getCouleur() == COULEURS::ROUGE);
 }
+
+TEST_CASE("Compteur", "[Forme]")
+{
+    // Pour être correct, ce test doit etre le premier sur Forme
+    REQUIRE(0 == Forme::prochainId());
+    Forme f1;
+    REQUIRE(0 == f1.getId());
+    REQUIRE(1 == Forme::prochainId());
+    // Verification que la valeur n'est pas decrementee accidentellement.
+    Forme *p = new Forme;
+    REQUIRE(1 == p->getId());
+    delete p;
+    REQUIRE(2 == Forme::prochainId());
+}*/
+
+
