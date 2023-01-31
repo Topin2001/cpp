@@ -89,15 +89,36 @@ std::string Liste::toString()
                 str += cercles[tmp_c - 1].toString();
                 tmp_c--;
             }
-        } else if (tmp_c <= 0 && tmp_r > 0)
+        }
+        else if (tmp_c <= 0 && tmp_r > 0)
         {
-            str += rectangles[tmp_r-1].toString();
+            str += rectangles[tmp_r - 1].toString();
             tmp_r--;
-        } else if (tmp_r <= 0 && tmp_c > 0)
+        }
+        else if (tmp_r <= 0 && tmp_c > 0)
         {
-            str += cercles[tmp_c-1].toString();
+            str += cercles[tmp_c - 1].toString();
             tmp_c--;
         }
+        str += " ";
+    }
+    return str;
+}
+
+int Groupe::compteur = 0;
+
+void Groupe::ajouter(Forme &f)
+{
+    formes[compteur] = &f;
+    compteur++;
+}
+
+std::string Groupe::toString() const
+{
+    std::string str;
+    for (int i = 0; i < compteur; i++)
+    {
+        str += formes[i]->toString();
         str += " ";
     }
     return str;

@@ -51,9 +51,9 @@ public:
     void ajouter(Forme&);
     static size_t const taille = 10;
     static int compteur;
-    static int getCompteur();
+    inline static int getCompteur(){return compteur;};
     Forme * formes[taille];
-    std::string toString();
+    std::string toString() const;
 };
 
 #endif
