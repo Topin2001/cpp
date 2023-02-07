@@ -1,6 +1,8 @@
 #ifndef __PILE_HPP__
 #define __PILE_HPP__
 
+#include <stdexcept>
+
 class Pile
 {
 private:
@@ -9,13 +11,13 @@ private:
     int *tab;
 
 public:
-    Pile(int const = 0);
+    Pile(int const = 1);
     ~Pile();
-    inline bool empty() { return Taille == 0; };
+    bool empty();
     inline int size() { return Taille; };
     void push(int);
     inline int top() { return tab[Taille - 1]; };
-    inline void pop() { Taille--; };
+    void pop();
 };
 
 #endif
