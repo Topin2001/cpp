@@ -1,6 +1,5 @@
-#include "Pile.hpp"
-
-Pile::Pile(int const taille)
+template<typename T>
+Pile<T>::Pile(int const taille)
 {
     if (taille > 0)
     {
@@ -11,12 +10,14 @@ Pile::Pile(int const taille)
         throw std::invalid_argument("Taille négative ou nulle");
 }
 
-Pile::~Pile()
+template<typename T>
+Pile<T>::~Pile()
 {
     delete[] tab;
 }
 
-bool Pile::empty()
+template<typename T>
+bool Pile<T>::empty()
 {
     if (Capacity > 0)
     {
@@ -26,7 +27,8 @@ bool Pile::empty()
         throw std::invalid_argument("Taille négative ou nulle");
 }
 
-void Pile::push(int a)
+template<typename T>
+void Pile<T>::push(int a)
 {
     if (Taille < Capacity)
     {
@@ -35,7 +37,8 @@ void Pile::push(int a)
     }
 }
 
-void Pile::pop()
+template<typename T>
+void Pile<T>::pop()
 {
     if (Taille > 0)
     {

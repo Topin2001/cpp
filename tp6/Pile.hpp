@@ -3,6 +3,7 @@
 
 #include <stdexcept>
 
+template<typename T=int>
 class Pile
 {
 private:
@@ -19,5 +20,7 @@ public:
     inline int top() { return tab[Taille - 1]; };
     void pop();
 };
+
+#include "Pile.xpp"
 
 #endif
